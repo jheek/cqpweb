@@ -1,0 +1,125 @@
+======================================================================
+IMS Corpus Workbench -- Demonstration Corpus 
+Size: 3.4 million tokens
+======================================================================
+
+
+This corpus is a collection of novels by Charles Dickens:
+
+- A Christmas Carol
+- David Copperfield
+- Dombey and Son
+- Great Expectations
+- Hard Times
+- Master Humphrey's Clock
+- Nicholas Nickleby
+- Oliver Twist
+- Our Mutual Friend
+- Sketches by BOZ
+- A Tale of Two Cities
+- The Old Curiosity Shop
+- The Pickwick Papers
+- Three Ghost Stories
+
+The text is derived from several Etext editions of Project Gutenberg.
+It was tokenised, part-of-speech tagged and lemmatised with Helmut
+Schmid's TreeTagger, and chunk-parsed with the Gramotron PCFG for
+English developed at the IMS.
+
+REFERENCES:
+Project Gutenberg
+	http://www.gutenberg.net/
+TreeTagger
+	http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/DecisionTreeTagger.html
+Gramotron PCFG
+	http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/LoPar-en.html
+
+======================================================================
+DISCLAIMER:
+ 
+THIS CORPUS IS PROVIDED TO YOU "AS-IS". NO WARRANTIES OF ANY KIND,
+EXPRESS OR IMPLIED, ARE MADE TO YOU AS TO THE CORPUS OR ANY MEDIUM IT
+MAY BE ON, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY
+OR FITNESS FOR A PARTICULAR PURPOSE.
+======================================================================
+
+
+INSTALLATION NOTES:
+
+This demonstration corpus is intended for use with the CQP Tutorial.
+You can access the corpus simply by running CQP in the current
+directory with the following options:
+
+	cqp -e -r registry
+
+If you want to install the corpus permanently, copy the file
+<registry/dickens> to the global registry directory, and insert the
+correct absolute path to the data/ subdirectory in the HOME and INFO
+entries.
+
+
+
+======================================================================
+
+DOCUMENT STRUCTURE:
+
+<file name="[filename of source file]">
+<novel title="[title of the novel]">
+
+<titlepage>
+
+<title len="[no. of words]"> TITLE - AUTHOR </title>
+
+TABLE OF CONTENTS / PREFACE / ETC. 
+
+</titlepage>
+
+[ <book num="[number of book]"> <title len="[no. of words]"> ... </title> ]
+
+<chapter num="[number of chapter]" title="[title of chapter]">
+<title len="[no. of words]"> ... </title>
+<p len="[no. of words]"> 
+  <s len="[no. of words]"> ... </s> <s len="[no. of words]"> ... </s> ... 
+</p>
+...
+</chapter>
+
+<chapter num="[number of chapter]" title="[title of chapter]">
+<title len="[no. of words]"> ... </title>
+<p len="[no. of words]"> 
+  <s len="[no. of words]"> ... </s> <s len="[no. of words]"> ... </s> ... 
+</p>
+...
+</chapter>
+
+...
+
+[ </book> ]
+
+</novel>
+</file>
+
+
+SYNTACTIC ANNOTATIONS:
+
+In sentences consisting of up to 42 words, noun and prepositional
+phrases identified with the Gramotron PCFG are annotated as <np> and
+<pp> elements:
+
+<s> 
+  ... 
+  <pp h="[head (preposition)]" len="[no. of words]">
+  ...
+  <np h="[head noun]" len="[no. of words]">
+  ...
+  </np>
+  </pp>
+  ...
+</s>
+
+Embedded NPs and PPs are represented up to a depth of two nested
+phrases (more deeply embedded phrases were dropped). For access with
+CQP, the nested elements are renamed to <np1>/<pp1> or <np2>/<pp2>,
+depending on the level of embedding.
+
+======================================================================

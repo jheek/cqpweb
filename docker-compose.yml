@@ -1,0 +1,9 @@
+version: "3.0"
+services:
+  cwb:
+    image: cwb
+    build:
+      context: .do
+    ports:
+      - 80:80
+    command: bash

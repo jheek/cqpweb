@@ -1,0 +1,1 @@
+<?php require('../lib/analyse.inc.php'); ?>

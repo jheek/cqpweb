@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 3.3  (Unix)">
+	<META NAME="AUTHOR" CONTENT="Andrew Hardie">
+	<META NAME="CREATED" CONTENT="20100619;13020000">
+	<META NAME="CHANGEDBY" CONTENT="Andrew Hardie">
+	<META NAME="CHANGED" CONTENT="20110828;9550000">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2.54cm }
+		TD P { margin-bottom: 0.21cm; color: #000000; text-align: left }
+		TD P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		TD P.cjk { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		TD P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
+		P { margin-bottom: 0.21cm; color: #000000; text-align: left }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		P.cjk { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ar-SA }
+		A:link { color: #0000ff }
+		A.ctl:link { font-family: "Times New Roman", serif }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" TEXT="#000000" LINK="#0000ff" DIR="LTR" STYLE="border: none; padding: 0cm">
+<P LANG="en-US" CLASS="western" STYLE="margin-top: 0.85cm; margin-bottom: 0cm">
+<FONT FACE="Arial, sans-serif"><FONT SIZE=4><I><B>CQPweb manual: How
+to configure visualisations in your corpora</B></I></FONT></FONT></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">This
+component of the CQPweb manual was last updated on 2011-08-28 for
+CQPweb version 3.0.2.</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL>
+	<LI><P LANG="en-US" CLASS="western" STYLE="margin-top: 0.85cm; margin-bottom: 0cm">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=4><B>Introduction to
+	visualisations</B></FONT></FONT></P>
+</OL>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">In CQPweb,
+the term <I>visualization</I><SPAN STYLE="font-style: normal"> refers
+generically to any aspect of how the concordances produced by the CQP
+back-end are translated into the HTML that you see in your browser in
+CQPweb.</SPAN></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><SPAN STYLE="font-style: normal">Visualisation
+has been made as customisable as possible. CQP allows any
+p-attributes or s-attributes to be displayed in the concordance.
+CQPweb is not as flexible, because of the restraints of a
+user-friendly interface. However, you </SPAN><I>can</I><SPAN STYLE="font-style: normal">
+render most s-attributes in useful ways, and there are multiple
+options for the </SPAN>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL START=2>
+	<LI><P LANG="en-US" CLASS="western" STYLE="margin-top: 0.85cm; margin-bottom: 0cm">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=4><B>Word and annotation
+	visualiastions</B></FONT></FONT></P>
+</OL>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><FONT COLOR="#0000ff"><SPAN STYLE="font-weight: normal">TODO
+Fill in manual here.</SPAN></FONT></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL START=2>
+	<LI><P LANG="en-US" CLASS="western" STYLE="margin-top: 0.85cm; margin-bottom: 0cm">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=4><B>XML visualisations</B></FONT></FONT></P>
+</OL>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">In the
+same configuration page, you can install, review and update/delete
+<B>XML visualisations</B><SPAN STYLE="font-weight: normal"> for the
+same </SPAN>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">XML
+visualisations must be input using a specialised variant of the
+“BBCode” simplified pseudo-HTML markup. You can read about BBCode
+<A CLASS="western" HREF="http://www.bbcode.org/">here</A>.</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><I><B>Why
+not just use HTML to specify the visualisations?</B></I></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">Because
+CQPweb would then be vulnerable to certain nasty attacks. HTML can
+safely be written directly into code files (such as the configuration
+file) but not via the web. So, it was a choice between letting the
+visualisation be specified over the web (with limitations on what you
+can do), or forcing all visualisations to be entered manually into
+code files. We've adopted the first route.</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">These are
+the codes you can use. Some of them are standard BBCode, some of them
+have been extended/</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<TABLE WIDTH=50% CELLPADDING=4 CELLSPACING=3>
+	<COL WIDTH=128*>
+	<COL WIDTH=128*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: 2.60pt double #808080; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0.1cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western"><B>Code</B></P>
+		</TD>
+		<TD WIDTH=50% STYLE="border: 2.60pt double #808080; padding: 0.1cm">
+			<P LANG="en-US" CLASS="western"><B>Resulting HTML</B></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[b]<I>XXX</I>[/b]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;strong&gt;<I>XXX</I>&lt;/strong&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[i]<I>XXX</I>[/i]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;em&gt;<I>XXX</I>&lt;/em&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[u]<I>XXX</I>[/u]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;u&gt;<I>XXX</I>&lt;/u&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[s]<I>XXX</I>[/s]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;s&gt;<I>XXX</I>&lt;/s&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[code]<I>XXX</I>[/code]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;pre&gt;<I>XXX</I>&lt;/pre&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[quote]<I>XXX</I>[/quote]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;blockquote&gt;<I>XXX</I>&lt;/blockquote&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[color=<I>YYY</I>]<I>XXX</I>[/color]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">Where YYY is either an HTML
+				colour name, or a hexadecimal colour code preceded by #</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;span
+			style=&quot;color:<I>YYY</I>&quot;&gt;<I>XXX</I>&lt;/span&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[center]<I>XXX</I>[/center]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;center&gt;<I>XXX</I>&lt;/center&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[size=<I>YYY</I>]<I>XXX</I>[/size]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">Where YY is a size in pixels</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;span
+			style=&quot;font-size:<I>YYY</I>px&quot;&gt;<I>XXX</I>&lt;/span&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[popup=<I>YYY</I>]<I>XXX</I>[/popup]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">This is a CQPweb-specific
+				extension</P>
+				<LI><P LANG="en-US" CLASS="western">Any quotemarks within YYY
+				must be replaced by HTML entities.</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;span onmouseover=&quot;return
+			escape('<I>YYY</I>')&quot;&gt;<I>XXX</I><SPAN STYLE="font-style: normal">&lt;/span&gt;</SPAN></P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western"><SPAN STYLE="font-style: normal">The
+				JavaScript function used here is a standard component of CQPweb
+				pages</SPAN></P>
+			</UL>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[img]<I>XXX</I>[/img]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;img src=&quot;<I>XXX</I>&quot;
+			/&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[img width=<I>YYY</I>
+			height=<I>ZZZ</I>]<I>XXX</I>[/img]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">Where YYY and ZZZ are
+				dimensions in pixels.</P>
+				<LI><P LANG="en-US" CLASS="western">The short form [img=<I>YYY</I>x<I>ZZZ</I>]
+				can also be used.</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;img width=&quot;<I>YYY</I><SPAN STYLE="font-style: normal">&quot;</SPAN>
+			height=&quot;<I>ZZZ</I>&quot; src=&quot;<I>XXX</I>&quot; /&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[url]<I>XXX</I>[/url]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;a href=&quot;<I>XXX</I>&quot;
+			target=&quot;_blank&quot;&gt;<I>XXX</I>&lt;/a&gt;</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">All links appear in new
+				windows/tabs</P>
+			</UL>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[url=<I>XXX</I>]<I>YYY</I>[/url]</P>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;a href=&quot;<I>XXX</I>&quot;
+			target=&quot;_blank&quot;&gt;<I>YYY</I>&lt;/a&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[list] [*] <I>XXX</I> [*] <I>YYY</I>
+			[*] <I>ZZZ</I> [/list]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">[ul] is a synonym for [list]</P>
+				<LI><P LANG="en-US" CLASS="western">[ol] is the same, but
+				produces a numbered list (&lt;ol&gt;).</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;ul&gt;&lt;li&gt;<I>XXX</I>&lt;/li&gt;&lt;li&gt;<I>YYY</I>&lt;/li&gt;&lt;li&gt;<I>ZZZ</I>&lt;/li&gt;&lt;/ul&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[table] [tr] … [/tr] [/table]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">Table structure is translated
+				directly, see below for table cells</P>
+				<LI><P LANG="en-US" CLASS="western">Be careful with [tr] (and
+				[td]), if not properly contained within a table it could interact
+				badly with the structure of the page as a whole.</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;table&gt; &lt;tr&gt; …
+			&lt;/tr&gt;&lt;/table&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[td r=<I>YYY</I> c=<I>ZZZ</I>]<I>XXX</I>[/td]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">The r=YYY and c=ZZZ options
+				are CQPweb-specific extensions; either, neither or both can be
+				given</P>
+				<LI><P LANG="en-US" CLASS="western">[th] can take the same
+				options and maps, unsurprisingly, to  &lt;th&gt;.</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;td colspan=&quot;<I>YYY</I>&quot;
+			rowspan=&quot;<I>ZZZ</I>&quot;&gt;<I>XXX</I>&lt;/td&gt;</P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[div=<I>YYY</I>]<I>XXX</I>[/div]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">This is a CQPweb-specific
+				extension</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;div
+			class=&quot;XmlViz__<I>YYY</I>&quot;&gt;<I>XXX</I>&lt;/div&gt;</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">You must define the class in
+				your CSS file in use in the corpus.</P>
+				<LI><P LANG="en-US" CLASS="western">The XmlViz__ prefix is
+				enforced to avoid the possibility of a clash in the
+				calsses-namespace.</P>
+			</UL>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0cm">
+			<P LANG="en-US" CLASS="western">[span=<I>YYY</I>]<I>XXX</I>[/span]</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">This is a CQPweb-specific
+				extension</P>
+			</UL>
+		</TD>
+		<TD WIDTH=50% STYLE="border-top: none; border-bottom: 2.60pt double #808080; border-left: 2.60pt double #808080; border-right: 2.60pt double #808080; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0.1cm; padding-right: 0.1cm">
+			<P LANG="en-US" CLASS="western">&lt;span
+			class=&quot;XmlViz__<I>YYY</I>&quot;&gt;<I>XXX</I>&lt;/span&gt;</P>
+			<UL>
+				<LI><P LANG="en-US" CLASS="western">You must define the class in
+				your CSS file in use in the corpus.</P>
+				<LI><P LANG="en-US" CLASS="western">The XmlViz__ prefix is
+				enforced to avoid the possibility of a clash in the
+				classes-namespace.</P>
+			</UL>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">You can
+also use embedded variables to represent the values of different
+fields of relevance to the XML tag that is being rendered. These are
+specified as follows:</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><B>$$$attribute-name$$$</B></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">renders
+the value of <I>&lt;tag attribute-name=&quot;</I><I><B>...</B></I><I>&quot;
+&gt;</I> in the original corpus.</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><B>$$$$$$</B></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">renders
+the single value of the current s-attribute instance, if it has one
+(depends on how the corpus was indexed....)</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><B>~~~field-name~~~</B></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">renders
+the value of text-metadata field <I>field-name</I> for the text in
+which the current s-attribute instance occurs.</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><B>~~~~~~</B></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">renders
+the text ID code of the current text.</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm">Note that
+the same value can be referenced at different levels. For instance,
+assume we have insdexed &lt;sentence n=&quot;1&quot;&gt;...&lt;/sentence&gt;,
+&lt;sentence n=&quot;2&quot;&gt;...&lt;/sentence&gt; and so on. In a
+visualisation for <B>sentence</B>, we would reference the sentence
+number as <B>$$$n$$$</B>. But as <B>sentence_n</B> is itself an
+s-attribute, we could create a visualisation for that, where the
+sentence number would be referred to as <B>$$$$$$</B><SPAN STYLE="font-weight: normal">.</SPAN></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<OL START=2>
+	<LI><P LANG="en-US" CLASS="western" STYLE="margin-top: 0.85cm; margin-bottom: 0cm">
+	<FONT FACE="Arial, sans-serif"><FONT SIZE=4><B>Visualisation of
+	aligned corpora</B></FONT></FONT></P>
+</OL>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><FONT COLOR="#ff0000">Support
+for displaying parallel data is a planned future feature.</FONT> If
+you have requirements or suggestions for how this should work, please
+feel free to contribute them (see <A CLASS="western" HREF="http://cwb.sf.net/">http://cwb.sf.net</A>).</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><IMG SRC="CQPweb-CEQL-manual_html_18678810.gif" NAME="graphics9" ALIGN=BOTTOM WIDTH=601 HEIGHT=2 BORDER=0></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-top: 0.18cm; margin-bottom: 0.18cm">
+<FONT COLOR="#808080"><FONT FACE="Verdana, sans-serif"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN LANG="en-US">CQPweb
+v3.0.2 © 2008-today – documentation by Andrew
+Hardie,</SPAN></FONT></FONT></FONT><FONT COLOR="#808080"><SPAN LANG="en-US">&nbsp;</SPAN></FONT><A CLASS="western" HREF="mailto:andrewhardie@user.ssourceforge.net"><FONT COLOR="#0000ff"><FONT FACE="Verdana, sans-serif"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN LANG="en-US"><U>andrewhardie@users.sourceforge.net</U></SPAN></FONT></FONT></FONT></A></P>
+<P LANG="en-US" CLASS="western" STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,7 @@
+create database cqpweb default charset utf8;
+create user cqpweb identified by 'cqpweb';
+
+use cqpweb;
+
+grant all on cqpweb.* to cqpweb;
+grant file on *.* to cqpweb;
