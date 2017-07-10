@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:7
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -7,10 +7,7 @@ RUN apt-get update
 RUN apt-get install -y apache2 mysql-client \
     mysql-server php5 php5-mysql php5-dev php5-gd \
     php5-memcache php5-pspell php5-snmp snmp php5-xmlrpc \
-    libapache2-mod-php5 php5-cli
-
-RUN apt-get install -y r-base
-RUN apt-get install -y nano sendmail
+    libapache2-mod-php5 php5-cli r-base nano sendmail
 
 RUN mkdir -p /var/lock/apache2 /var/run/apache2
 
@@ -18,14 +15,12 @@ COPY ./src /tmp/cwb
 
 WORKDIR /tmp/cwb
 
-RUN mkdir -p /corpora/data/ && \
-    mkdir -p /usr/local/share/cwb/registry/ && \
-    mv DemoCorpus/data/ /corpora/data/dickens && \
-    mv DemoCorpus/registry/dickens /usr/local/share/cwb/registry/dickens && \
-    cp -r CQPweb/ /var/www/html/cqp
-    ./install-cwb.sh
+VOLUME /var/lib/mysql /corpora /usr/local/share/cwb/registry /cqp
+
+RUN mkdir -p /tmp/cqp && chmod 777 /tmp/cqp && \
+    ./install-cwb.sh && \
+    cd /tmp/cwb/CWB-perl && \
+    perl Makefile.PL && \
+    make && make install
 
 EXPOSE 80
-
-php -r "mail('jheek@icloud.com','itworks...','Yes it does work.');"
-echo "My test email being sent from sendmail" | /usr/sbin/sendmail jheek@icloud.com

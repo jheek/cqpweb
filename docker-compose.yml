@@ -3,7 +3,12 @@ services:
   cwb:
     image: cwb
     build:
-      context: .do
+      context: .
     ports:
       - 80:80
-    command: bash
+    command: ./run-cqp.sh
+    volumes:
+      - ./www:/var/www
+      - ./corpora:/corpora
+      - ./registry:/usr/local/share/cwb/registry
+      - ./cqp:/cqp
