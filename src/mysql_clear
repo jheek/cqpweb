@@ -1,0 +1,5 @@
+
+drop database cqpweb;
+create database cqpweb default charset utf8;
+grant all on cqpweb.* to cqpweb;
+grant file on *.* to cqpweb;
