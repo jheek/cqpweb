@@ -472,11 +472,12 @@ if ($run_new_query)
 	/* set restrictions / activate subcorpus */
 	$qscope->insert_to_cqp(); 
 
+	// echo "Executing query: " . "$qname = $cqp_query";
 	/* this is the business end */
 	$cqp->execute("$qname = $cqp_query");
 
 	/* now that we have the query, find out its size */
-	
+	// echo "Result size: " . $cqp->querysize($qname);
 	if (0 == ($num_of_solutions = $cqp->querysize($qname)) )
 	{
 		/* no solutions: update the history, then send the user a message and exit */
@@ -487,12 +488,13 @@ if ($run_new_query)
 	}
 	
 	/* otherwise, save the query file to disk, then create a cache record. */
+
 	$cqp->execute("save $qname");
 
 	$num_of_texts = count( $cqp->execute("group $qname match text_id") );
 	/* note that this field in the record always refers to the ORIGINAL num of texts
 	 * so, it is OK to set it here and not anywhere else (as postprocesses don't affect it) */
-
+	
 	/* put the query in the cache and get a cache-record object.*/
 	$cache_record = QueryRecord::create(
 			$qname, 
@@ -533,6 +535,7 @@ if ($history_inserted)
  * START OF POSTPROCESSING *
  * ----------------------- */
 
+// echo "postprocess";die;
 /* note that, for reasons of auto-thinning queries for users with restricted access, all this bit is inside a once-only loop */ 
 while (true)
 {

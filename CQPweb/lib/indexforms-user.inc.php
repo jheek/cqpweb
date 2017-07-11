@@ -1122,7 +1122,7 @@ function printscreen_usermacros()
 			<td class="concordgrey"><input type="submit" value="Create macro"/></td>
 		</tr>
 		
-		<input type="hidden" name="macroUsername" value="<?php echo $Uxer->username;?>" />
+		<input type="hidden" name="macroUsername" value="<?php echo $user->username;?>" />
 		<input type="hidden" name="thisQ" value="userMacros" />
 		<input type="hidden" name="uT" value="y" />
 		

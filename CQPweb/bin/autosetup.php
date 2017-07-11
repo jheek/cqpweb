@@ -79,7 +79,7 @@ $Config->default_colloc_calc_stat = $default_colloc_calc_stat;
 $Config->default_colloc_minfreq = $default_colloc_minfreq;
 $Config->default_colloc_range = $default_colloc_range;
 $Config->default_max_dbsize = $default_max_dbsize;
-
+var_dump($Config);
 
 echo "\nInstalling database structure; please wait.\n";
 cqpweb_mysql_total_reset();

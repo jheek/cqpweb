@@ -491,7 +491,7 @@ class CQP
 		/* check for error messages */
 		if ($this->checkerr())
 			return false;
-
+		
 		/* return the array of results */
 		return $this->filter_output($result);
 	}

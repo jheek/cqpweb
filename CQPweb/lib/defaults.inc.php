@@ -286,9 +286,11 @@ if (!isset($default_history_per_page))
 	// TODO when these are documented, note that these are the defaults for user settings, and can be overridden.
 if (!isset($default_colloc_range))
 	$default_colloc_range = 5;
-	
-if (!isset($default_colloc_calc_stat))
+
+if (!isset($default_colloc_calc_stat)) {
 	$default_colloc_calc_stat = 6; 	/* {6 == log-likelihood} is default collocation statistic */
+}
+
 
 if (!isset($default_colloc_minfreq))
 	$default_colloc_minfreq = 5;
