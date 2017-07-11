@@ -21,6 +21,7 @@ RUN mkdir -p /tmp/cqp && chmod 777 /tmp/cqp && \
     ./install-cwb.sh && \
     cd /tmp/cwb/CWB-perl && \
     perl Makefile.PL && \
-    make && make install
+    make && make install && \
+    cp /tmp/cwb/php.ini /etc/php5/apache2/php.ini
 
 EXPOSE 80

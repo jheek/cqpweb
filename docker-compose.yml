@@ -8,7 +8,7 @@ services:
       - 80:80
     command: ./run-cqp.sh
     volumes:
-      - ./www:/var/www
+      - ./CQPweb:/var/www
       - ./corpora:/corpora
       - ./registry:/usr/local/share/cwb/registry
       - ./cqp:/cqp
