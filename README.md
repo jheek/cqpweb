@@ -20,12 +20,6 @@ This will reset the databse (This removes all data!)
 cat /tmp/cwb/mysql_clear | mysql
 `
 
-Copy CQPweb to the apache server
-`
-cp -r /tmp/cwb/CQPWeb/ /var/www/
-cp cqp-conf /var/www/CQPweb/lib/config.inc.php
-`
-
 Create a directory for uploaded files
 `
 mkdir /cqp/upload
@@ -37,10 +31,11 @@ cd /var/www/CQPweb/bin
 php autosetup.php
 `
 
-Install demo corpus
-`
-cp -r DemoCorpus/data/ /corpora/data/dickens
-cp DemoCorpus/registry/dickens /usr/local/share/cwb/registry/dickens
-`
 
+Mappings to the host file system are given in `docker-compose.yml`.
 
+A database dump can be created for backup and migration purposes:
+`
+mysqldump cqpweb > /cqp/dbdump.sql
+`
+This command should be executed within the container. The dump is stored in the shared folderr `cqp`.
