@@ -516,7 +516,6 @@ function make_cwb_freq_index($corpus)
 		$line = trim($line, "\r\n ");
 		/* we do not trim off \t because it might be a column terminator */
 
-
 		if (preg_match('/^<text_id\s+(\w+)>$/', $line, $m) > 0)
 		{
 			/* extract the id from the preceding regex using (\w+) */
@@ -528,7 +527,7 @@ function make_cwb_freq_index($corpus)
 			/* do the things to be done at the end of each text */
 			
 			if ( ! isset($current_id) )
-				exiterror("Unexpected /text_id end-tag while creating corpus $freq_corpus_cqp_name_uc! -- creation aborted");
+				exiterror("Unexpected /text_id Hello end-tag while creating corpus $freq_corpus_cqp_name_uc! -- creation aborted");
 			
 			if (false === fputs($dest, "<text id=\"$current_id\">\n"))
 				exiterror("Freq index creation: Could not write [text] to CWB encode destination pipe");
@@ -567,10 +566,13 @@ function make_cwb_freq_index($corpus)
 			if ( ! isset($current_id) )
 			{
 				/* this is the only thing that will validly occur outside of a <text> */
-				if ($line == '</corpus>')
+				if ($line == '</corpus>') {
 					continue;
-				else
-					exiterror("Unexpected line outside text_id tags while creating corpus $freq_corpus_cqp_name_uc! -- creation aborted");
+				}
+				else {
+					echo "WARNING! Unexpected line outside text_id tags: \"$line\"";
+					// exiterror("Unexpected line outside text_id tags while creating corpus $freq_corpus_cqp_name_uc! -- creation aborted");
+				}
 			}
 			/* otherwise... */
 

@@ -23,6 +23,7 @@ cat /tmp/cwb/mysql_clear | mysql
 Create a directory for uploaded files
 ```
 mkdir /cqp/upload
+mkdir /corpora/data/
 ```
 
 This will setup the database
