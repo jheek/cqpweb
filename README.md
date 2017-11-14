@@ -28,7 +28,7 @@ mkdir /corpora/data/
 
 This will setup the database
 ```
-cd /var/www/CQPweb/bin
+cd /var/www/bin
 php autosetup.php
 ```
 
